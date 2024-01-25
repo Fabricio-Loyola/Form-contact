@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formulario de contacto</title>
+</head>
+<body>
+
+    <form id="contactForm" action="https://formsubmit.co/your@email.com" method="POST">
+
+        <h2>Contactanos</h2>
+
+        <div class="input-group">
+
+            <label for="name">Nombre</label>
+            <input type="text" name="name" id="name" placeholder="Nombre" required>
+
+            <label for="phone">Telefono</label>
+            <input type="tel" name="phone" id="phone" placeholder="Telefono" required>
+
+            <label for="email">Correo electronico</label>
+            <input type="email" name="email" id="email" placeholder="ejemplo@gmail.com" required>
+
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message" cols="30" rows="5" placeholder="Mensaje.." required></textarea>
+
+            <div class="form-txt">
+                <a href="#">Politica de privacidad</a>
+                <a href="#">Terminos y condiciones</a>
+            </div>
+
+            <input class="btn" type="submit" value="Enviar" onclick="validateForm()">
+
+        </div>
+
+    </form>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var message = document.getElementById('message').value;
+
+            if (name === '' || phone === '' || email === '' || message === '') {
+                alert('Todos los campos son obligatorios');
+                event.preventDefault(); // Evita que se envíe el formulario si hay campos vacíos
+            }
+        }
+    </script>
+
+</body>
+</html>
